@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sturtle.QuestionFoodActivity">
+
+    <ViewFlipper
+        android:id="@+id/background_food_viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            style="@style/background"
+            android:src="@drawable/food_in" />
+
+        <pl.droidsonroids.gif.GifImageView
+            style="@style/background"
+            android:src="@drawable/food_out" />
+    </ViewFlipper>
+
+    <LinearLayout
+        android:id="@+id/question_food_layout"
+        style="@style/text_layout"
+        android:background="@drawable/background_question"
+        android:padding="@dimen/marginSmall"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/question_food"
+            style="@style/question"
+            android:text="@string/question_food" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginSmall">
+
+            <LinearLayout
+                style="@style/answer_layout"
+                android:layout_marginRight="@dimen/marginSmall">
+
+                <CheckBox
+                    android:id="@+id/food_answer_1"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_1" />
+
+                <CheckBox
+                    android:id="@+id/food_answer_4"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_3" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/answer_layout"
+                android:layout_marginRight="@dimen/marginSmall">
+
+                <CheckBox
+                    android:id="@+id/food_answer_2"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_1" />
+
+                <CheckBox
+                    android:id="@+id/food_answer_5"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_3" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/answer_layout">
+
+                <CheckBox
+                    android:id="@+id/food_answer_3"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_2" />
+
+                <CheckBox
+                    android:id="@+id/food_answer_6"
+                    style="@style/check_answer"
+                    android:text="@string/food_answer_4" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="next"
+            android:text="@string/nextButton" />
+    </LinearLayout>
+</RelativeLayout>

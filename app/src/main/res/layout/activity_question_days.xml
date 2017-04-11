@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question_days"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sturtle.QuestionDaysActivity">
+
+    <ViewFlipper
+        android:id="@+id/background_days_viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            style="@style/background"
+            android:src="@drawable/days_in" />
+
+        <pl.droidsonroids.gif.GifImageView
+            style="@style/background"
+            android:src="@drawable/days_out" />
+    </ViewFlipper>
+
+    <LinearLayout
+        android:id="@+id/question_days_layout"
+        style="@style/text_layout"
+        android:background="@drawable/background_question"
+        android:padding="@dimen/marginSmall"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/question_days"
+            style="@style/question"
+            android:text="@string/question_days" />
+
+        <EditText
+            android:id="@+id/days_edit_text"
+            style="@style/edit_text_answer"
+            android:hint="@string/days_hint"
+            android:inputType="number" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="next"
+            android:text="@string/nextButton" />
+    </LinearLayout>
+</RelativeLayout>

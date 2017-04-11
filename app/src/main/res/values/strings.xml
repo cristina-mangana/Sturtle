@@ -1,0 +1,70 @@
+<resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Sturtle</string>
+
+    <!-- EditText hints -->
+    <string name="name_hint">Please enter your name here</string>
+    <string name="days_hint">0</string>
+
+    <!-- Buttons -->
+    <string name="nextButton">Next</string>
+    <string name="finishButton">Finish</string>
+    <string name="tryAgainButton">Try Again</string>
+    <string name="shareButton">Share</string>
+
+    <!-- Toasts -->
+    <string name="name_error">Please insert your name</string>
+    <string name="answer_error">Please enter your answer</string>
+    <string name="finish_toast">Congratulations, you\'ve completed the quiz</string>
+
+    <!-- Description of the protagonist turtle, Lorene (name is expected to be translated). -->
+    <string name="description">This is Lorene, our sea-turtle friend. Would you like to help her?</string>
+
+    <!-- Questions -->
+    <string name="question_food">Lorene is feeling hungry, what should she eat?</string>
+    <string name="question_lay_eggs">It\'s nesting season, where should Lorene lay her eggs?</string>
+    <string name="question_days">Little turtles are now warm and comfortable inside their eggs,
+        how many days should they rest there?</string>
+    <string name="question_gender">Are they going to be males or females?
+        Which characteristic is going to determine that?</string>
+    <string name="question_reach_ocean">Hatchling turtles are now going back to the ocean,
+        how do they know how to reach it?</string>
+
+    <!-- Answer question 1 (food) -->
+    <string name="food_answer_1">Plastic bags</string>
+    <string name="food_answer_2">Algae</string>
+    <string name="food_answer_3">Mollusks</string>
+    <string name="food_answer_4">Jellyfishes</string>
+    <string name="food_answer_5">Worms</string>
+    <string name="food_answer_6">Crustaceans</string>
+
+    <!-- Answer question 2 (lay_eggs) -->
+    <string name="lay_eggs_answer_1">Under the dry beach sand</string>
+    <string name="lay_eggs_answer_2">In a nest over the sand</string>
+    <string name="lay_eggs_answer_3">Into a dark hole in a rock</string>
+    <string name="lay_eggs_answer_4">Under the wet sand, where sea water can reach</string>
+
+    <!-- Answer question 4 (gender) -->
+    <string name="gender_answer_1">Sex chromosomes</string>
+    <string name="gender_answer_2">Egg size</string>
+    <string name="gender_answer_3">Nest temperature</string>
+    <string name="gender_answer_4">Mother\'s age</string>
+
+    <!-- Answer question 5 (reach_ocean) -->
+    <string name="reach_ocean_answer_1">By the sound of the sea waves</string>
+    <string name="reach_ocean_answer_2">They are attracted to bright lights</string>
+    <string name="reach_ocean_answer_3">By the ground slope</string>
+    <string name="reach_ocean_answer_4">They can smell their mother\'s pheromones</string>
+
+    <!-- Summary results -->
+    <string name="correct_questions">Correct</string>
+    <string name="incorrect_questions">Incorrect</string>
+    <string name="incomplete_questions">Incomplete</string>
+    <string name="your_score">Your Score:</string>
+
+    <!-- Score messages -->
+    <string name="awesome_score">Awesome <xliff.g id="name" example="Cristina">%s</xliff.g>! Lorene is really happy with friends like you</string>
+    <string name="improve_score">Oh <xliff.g id="name" example="Cristina">%s</xliff.g>! You should help Lorene more!</string>
+    <string name="shared_text">Hey! I\'ve achieved <xliff.g id="points" example="5">%d</xliff.g>/10 points in Sturtle Quiz! Do you want to try?</string>
+
+</resources>

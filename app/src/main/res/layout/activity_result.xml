@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circleview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sturtle.ResultActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_summary"
+            android:paddingBottom="@dimen/marginNormal"
+            android:paddingLeft="@dimen/marginNormal"
+            android:paddingRight="@dimen/marginNormal"
+            android:paddingTop="@dimen/marginBig">
+
+            <LinearLayout
+                style="@style/answer_layout"
+                android:layout_marginRight="@dimen/marginSmall">
+
+                <TextView
+                    android:id="@+id/number_of_correct"
+                    style="@style/summary_text"
+                    android:textSize="@dimen/headSize" />
+
+                <TextView
+                    android:id="@+id/correct_textView"
+                    style="@style/summary_text"
+                    android:text="@string/correct_questions"
+                    android:textSize="@dimen/textSize" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/answer_layout"
+                android:layout_marginRight="@dimen/marginSmall">
+
+                <TextView
+                    android:id="@+id/number_of_incorrect"
+                    style="@style/summary_text"
+                    android:textSize="@dimen/headSize" />
+
+                <TextView
+                    android:id="@+id/incorrect_textView"
+                    style="@style/summary_text"
+                    android:text="@string/incorrect_questions"
+                    android:textSize="@dimen/textSize" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/number_of_incomplete"
+                    style="@style/summary_text"
+                    android:textSize="@dimen/headSize" />
+
+                <TextView
+                    android:id="@+id/incomplete_textView"
+                    style="@style/summary_text"
+                    android:text="@string/incomplete_questions"
+                    android:textSize="@dimen/textSize" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/your_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/marginBig"
+            android:text="@string/your_score"
+            android:textSize="@dimen/subheadSize" />
+
+        <rjsv.circularview.CircleView
+            android:id="@+id/circle_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            circleview:arcWidth="@dimen/arc_width"
+            circleview:enabled="false"
+            circleview:hasIndicator="false"
+            circleview:progressColor="@color/colorAccent"
+            circleview:progressMaximumValue="10"
+            circleview:progressMinimumValue="0"
+            circleview:progressStepValue="1"
+            circleview:progressWidth="@dimen/arc_width"
+            circleview:textColor="@color/colorAccent"
+            circleview:textFont="fonts/Roboto-Bold.ttf"
+            circleview:textSize="@dimen/headSize" />
+
+        <TextView
+            android:id="@+id/score_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginBig"
+            android:layout_marginRight="@dimen/marginBig"
+            android:layout_marginTop="@dimen/marginNormal"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/subheadSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginBig"
+                android:onClick="share"
+                android:text="@string/shareButton" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginBig"
+                android:onClick="tryAgain"
+                android:text="@string/tryAgainButton" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

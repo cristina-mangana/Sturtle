@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.sturtle.MainActivity">
+
+    <ImageView
+        style="@style/background"
+        android:src="@drawable/background"
+        tools:ignore="contentDescription" />
+
+    <LinearLayout
+        style="@style/text_layout">
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/question"
+            android:text="@string/description" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/name_edit_text"
+                android:layout_width="@dimen/nullDimension"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                style="@style/edit_text_answer"
+                android:hint="@string/name_hint"
+                android:inputType="textCapWords" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="start"
+                android:src="@drawable/ic_arrow_forward_white" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
