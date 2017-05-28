@@ -63,6 +63,7 @@ public class QuestionFoodActivity extends AppCompatActivity {
             boolean isCheckedFoodAnswer5 = savedInstanceState.getBoolean("isCheckedFoodAnswer5");
             boolean isCheckedFoodAnswer6 = savedInstanceState.getBoolean("isCheckedFoodAnswer6");
             // Apply saved data (suppress warning about setting visibility)
+            // https://stackoverflow.com/questions/26139115/not-able-to-dynamically-set-the-setvisibility-parameter
             // noinspection ResourceType
             linearLayoutQuestionFood.setVisibility(questionFoodVisibility);
             checkBoxFoodAnswer1.setChecked(isCheckedFoodAnswer1);
@@ -72,7 +73,8 @@ public class QuestionFoodActivity extends AppCompatActivity {
             checkBoxFoodAnswer5.setChecked(isCheckedFoodAnswer5);
             checkBoxFoodAnswer6.setChecked(isCheckedFoodAnswer6);
         } else {
-            // Question in with animation from bottom (only when first open the activity)
+            // Question in with animation from bottom (only when first open the activity: when
+            // saveInstanceState == null)
             linearLayoutQuestionFood.setVisibility(View.VISIBLE);
             Animation animSlide = AnimationUtils.loadAnimation(this, R.anim.in_from_bottom);
             linearLayoutQuestionFood.startAnimation(animSlide);
@@ -124,18 +126,20 @@ public class QuestionFoodActivity extends AppCompatActivity {
         if (!isCheckedFoodAnswer1 && !isCheckedFoodAnswer2 && !isCheckedFoodAnswer3
                 && !isCheckedFoodAnswer4 && !isCheckedFoodAnswer5 && !isCheckedFoodAnswer6)
         {
-            // Show an error message as a toast
+            // Show an error message as a toast if there's no answer
             Toast.makeText(this, getString(R.string.answer_error), Toast.LENGTH_SHORT).show();
         } else {
             checkAnswer(isCheckedFoodAnswer1, isCheckedFoodAnswer2, isCheckedFoodAnswer3,
                     isCheckedFoodAnswer4, isCheckedFoodAnswer5, isCheckedFoodAnswer6);
             LinearLayout linearLayoutQuestionFood = (LinearLayout) findViewById(R.id.question_food_layout);
             linearLayoutQuestionFood.setVisibility(View.INVISIBLE);
+            // Question out to bottom animated
             Animation animSlide = AnimationUtils.loadAnimation(this, R.anim.out_to_bottom);
             linearLayoutQuestionFood.startAnimation(animSlide);
             ViewFlipper backgroundViewFlipper = (ViewFlipper) findViewById(R.id.background_food_viewFlipper);
             backgroundViewFlipper.showNext();
-            //delay the execution
+            //delay the execution until animated gif finishes
+            // https://stackoverflow.com/questions/5321344/android-animation-wait-until-finished
             Handler handler = new Handler();
             handler.postDelayed(new Runnable(){
                 public void run() {
@@ -164,6 +168,7 @@ public class QuestionFoodActivity extends AppCompatActivity {
      */
     private int checkAnswer (boolean isCheckedFoodAnswer1, boolean isCheckedFoodAnswer2, boolean isCheckedFoodAnswer3,
             boolean isCheckedFoodAnswer4, boolean isCheckedFoodAnswer5, boolean isCheckedFoodAnswer6) {
+        // Only first option is incorrect. If options 2-6 aren't all checked, answer is correct but incomplete
         // TODO include messages to the user with tips
         if (!isCheckedFoodAnswer1) {
             if (isCheckedFoodAnswer2 && isCheckedFoodAnswer3
@@ -180,7 +185,8 @@ public class QuestionFoodActivity extends AppCompatActivity {
         }
     }
 
-    // Do nothing when back button is pressed
+    // Do nothing when back button is pressed: don't allow going back until the quiz is completely done
+    // https://stackoverflow.com/questions/4779954/disable-back-button-in-android
     @Override
     public void onBackPressed() {
     }

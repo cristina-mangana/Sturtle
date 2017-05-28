@@ -54,6 +54,7 @@ public class QuestionGenderActivity extends AppCompatActivity {
         radioButtonGenderAnswer4.setTypeface(typeFaceRobotoRegular);
 
         // RadioGroup in two columns
+        // https://stackoverflow.com/questions/10425569/radiogroup-with-two-columns-which-have-ten-radiobuttons
         RadioGroup radioGroupGenderAnswer1 = (RadioGroup) findViewById(R.id.gender_answer_column1);
         RadioGroup radioGroupGenderAnswer2 = (RadioGroup) findViewById(R.id.gender_answer_column2);
         radioGroupGenderAnswer1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
@@ -203,7 +204,7 @@ public class QuestionGenderActivity extends AppCompatActivity {
         }
     }
 
-    // Do nothing when back button is pressed
+    // Do nothing when back button is pressed: don't allow going back until the quiz is completely done
     @Override
     public void onBackPressed() {
     }

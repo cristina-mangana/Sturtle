@@ -59,6 +59,7 @@ public class ResultActivity extends AppCompatActivity {
         totalScore = calculateScore(correct, incomplete);
         final CircleView circleView = (CircleView) findViewById(R.id.circle_view);
         circleView.setProgressValue(totalScore);
+        // TODO change format number
 
         // Set score message
         if (totalScore > 5) {

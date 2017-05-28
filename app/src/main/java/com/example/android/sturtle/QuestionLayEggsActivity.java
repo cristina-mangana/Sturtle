@@ -56,7 +56,8 @@ public class QuestionLayEggsActivity extends AppCompatActivity {
         radioButtonLayEggsAnswer4.setTypeface(typeFaceRobotoRegular);
 
         if (getResources().getConfiguration().orientation == ORIENTATION_LANDSCAPE) {
-            // RadioGroup in two columns
+            // RadioGroup in two columns, only in landscape
+            // https://stackoverflow.com/questions/10425569/radiogroup-with-two-columns-which-have-ten-radiobuttons
             RadioGroup radioGroupLayEggsAnswer1 = (RadioGroup) findViewById(R.id.lay_eggs_answer_column1);
             RadioGroup radioGroupLayEggsAnswer2 = (RadioGroup) findViewById(R.id.lay_eggs_answer_column2);
             radioGroupLayEggsAnswer1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
@@ -207,7 +208,7 @@ public class QuestionLayEggsActivity extends AppCompatActivity {
         }
     }
 
-    // Do nothing when back button is pressed
+    // Do nothing when back button is pressed: don't allow going back until the quiz is completely done
     @Override
     public void onBackPressed() {
     }

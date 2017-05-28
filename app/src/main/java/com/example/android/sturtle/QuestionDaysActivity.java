@@ -123,7 +123,7 @@ public class QuestionDaysActivity extends AppCompatActivity {
         }
     }
 
-    // Do nothing when back button is pressed
+    // Do nothing when back button is pressed: don't allow going back until the quiz is completely done
     @Override
     public void onBackPressed() {
     }
